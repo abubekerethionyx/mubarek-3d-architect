@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Box, Text } from '@react-three/drei';
+import { Box } from '@react-three/drei';
 import * as THREE from 'three';
 import { Button } from '@/components/ui/button';
 
@@ -37,18 +37,18 @@ const FloatingParticles: React.FC = () => {
   });
 
   const particles = [];
-  for (let i = 0; i < 50; i++) {
-    const hue = Math.random();
-    const color = `hsl(${hue * 360}, 70%, 50%)`;
+  for (let i = 0; i < 30; i++) {
+    const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'];
+    const color = colors[i % colors.length];
     
     particles.push(
       <Box
         key={i}
         args={[0.1, 0.1, 0.1]}
         position={[
-          (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 10
+          (Math.random() - 0.5) * 8,
+          (Math.random() - 0.5) * 8,
+          (Math.random() - 0.5) * 8
         ]}
       >
         <meshStandardMaterial color={color} />
@@ -73,6 +73,9 @@ const HeroSection: React.FC = () => {
         <Canvas
           camera={{ position: [0, 0, 8], fov: 75 }}
           gl={{ alpha: true, antialias: true }}
+          onCreated={({ gl }) => {
+            gl.setClearColor('#000000', 0);
+          }}
         >
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} />
