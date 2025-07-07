@@ -1,7 +1,6 @@
 
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { Card } from '@/components/ui/card';
 
@@ -15,6 +14,7 @@ interface SkillSphereProps {
 
 const SkillSphere: React.FC<SkillSphereProps> = ({ position, skill, color, isHovered, onHover }) => {
   const meshRef = useRef<THREE.Mesh>(null);
+  const textRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -25,12 +25,12 @@ const SkillSphere: React.FC<SkillSphereProps> = ({ position, skill, color, isHov
 
   return (
     <group position={position}>
-      <Sphere
+      <mesh
         ref={meshRef}
-        args={[0.8, 32, 32]}
         onPointerOver={() => onHover(true)}
         onPointerOut={() => onHover(false)}
       >
+        <sphereGeometry args={[0.8, 32, 32]} />
         <meshStandardMaterial
           color={color}
           transparent
@@ -38,17 +38,11 @@ const SkillSphere: React.FC<SkillSphereProps> = ({ position, skill, color, isHov
           emissive={color}
           emissiveIntensity={isHovered ? 0.3 : 0.1}
         />
-      </Sphere>
-      <Text
-        position={[0, 0, 1]}
-        fontSize={0.3}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-        font="/fonts/helvetiker_regular.typeface.json"
-      >
-        {skill}
-      </Text>
+      </mesh>
+      <mesh position={[0, 0, 1]} ref={textRef}>
+        <planeGeometry args={[2, 0.5]} />
+        <meshBasicMaterial transparent opacity={0} />
+      </mesh>
     </group>
   );
 };
@@ -75,7 +69,7 @@ const SkillsSection: React.FC = () => {
           <div className="h-96">
             <Canvas
               camera={{ position: [0, 0, 8], fov: 75 }}
-              gl={{ alpha: true, antialias: true }}
+              style={{ background: 'transparent' }}
             >
               <ambientLight intensity={0.6} />
               <pointLight position={[10, 10, 10]} intensity={1} />
