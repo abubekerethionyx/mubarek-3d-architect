@@ -18,7 +18,7 @@ const RotatingCube: React.FC = () => {
   return (
     <Box ref={meshRef} args={[2, 2, 2]} position={[0, 0, 0]}>
       <meshStandardMaterial 
-        color="hotpink" 
+        color="#ff69b4" 
         transparent 
         opacity={0.8} 
         wireframe
@@ -38,6 +38,9 @@ const FloatingParticles: React.FC = () => {
 
   const particles = [];
   for (let i = 0; i < 50; i++) {
+    const hue = Math.random();
+    const color = `hsl(${hue * 360}, 70%, 50%)`;
+    
     particles.push(
       <Box
         key={i}
@@ -48,7 +51,7 @@ const FloatingParticles: React.FC = () => {
           (Math.random() - 0.5) * 10
         ]}
       >
-        <meshStandardMaterial color={new THREE.Color().setHSL(Math.random(), 0.7, 0.5)} />
+        <meshStandardMaterial color={color} />
       </Box>
     );
   }
@@ -73,7 +76,7 @@ const HeroSection: React.FC = () => {
         >
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="blue" />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#0080ff" />
           <FloatingParticles />
           <RotatingCube />
         </Canvas>
