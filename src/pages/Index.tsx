@@ -1,12 +1,72 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useRef, useEffect, useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, Text, Sphere, Box } from '@react-three/drei';
+import * as THREE from 'three';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Github, Linkedin, Contact, Home, FileText } from 'lucide-react';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import SkillsSection from '@/components/SkillsSection';
+import ExperienceSection from '@/components/ExperienceSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <Header activeSection={activeSection} />
+      
+      <section id="home">
+        <HeroSection />
+      </section>
+
+      <section id="about" className="py-20">
+        <AboutSection />
+      </section>
+
+      <section id="skills" className="py-20">
+        <SkillsSection />
+      </section>
+
+      <section id="experience" className="py-20">
+        <ExperienceSection />
+      </section>
+
+      <section id="projects" className="py-20">
+        <ProjectsSection />
+      </section>
+
+      <section id="contact" className="py-20">
+        <ContactSection />
+      </section>
     </div>
   );
 };
