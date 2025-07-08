@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Home, Contact, FileText, Github, Linkedin } from 'lucide-react';
+import { Home, Contact, FileText, Github, Linkedin, FileDown } from 'lucide-react';
 
 interface HeaderProps {
   activeSection: string;
@@ -13,6 +13,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     { id: 'skills', label: 'Skills', icon: FileText },
     { id: 'experience', label: 'Experience', icon: FileText },
     { id: 'projects', label: 'Projects', icon: FileText },
+    { id: 'cv', label: 'CV', icon: FileDown },
     { id: 'contact', label: 'Contact', icon: Contact },
   ];
 
