@@ -20,6 +20,61 @@ const AboutSection: React.FC = () => {
     { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'] }
   ];
 
+  const handleDownloadCV = () => {
+    // Create and download CV file
+    const cvContent = `John Doe - Full-Stack Developer & AI Specialist
+
+EXPERIENCE:
+• 2019-Present: Full-Stack Developer at Fineto
+• 2023-Present: AI Agent Development Specialist
+• 2018-2019: Junior Developer & Learning Phase
+
+SKILLS:
+Frontend: React, TypeScript, Next.js, Tailwind CSS
+Backend: Python, Java, Spring Boot, FastAPI
+AI/ML: AutoGen, OpenAI GPT, TensorFlow, Scikit-learn
+Database: PostgreSQL, MongoDB, Redis, MySQL
+
+ACHIEVEMENTS:
+• 5+ years of development experience
+• 50+ completed projects
+• 8 professional certifications
+• 100K+ lines of code written
+
+Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
+
+    const blob = new Blob([cvContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'John_Doe_CV.txt';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  };
+
+  const handleGetInTouch = () => {
+    // Scroll to contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleStartConversation = () => {
+    // Open email client
+    window.open('mailto:john.doe@email.com?subject=Let\'s Build Something Amazing Together&body=Hi John,%0D%0A%0D%0AI\'d love to discuss a potential project collaboration...', '_blank');
+  };
+
+  const handleViewWork = () => {
+    // Scroll to projects section
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="container mx-auto px-6">
       <div className="max-w-6xl mx-auto">
@@ -85,11 +140,11 @@ const AboutSection: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
-              <Button className="flex items-center gap-2">
+              <Button onClick={handleDownloadCV} className="flex items-center gap-2">
                 <Download size={16} />
                 Download CV
               </Button>
-              <Button variant="outline" className="flex items-center gap-2">
+              <Button onClick={handleGetInTouch} variant="outline" className="flex items-center gap-2">
                 <Mail size={16} />
                 Get in Touch
               </Button>
@@ -193,11 +248,11 @@ const AboutSection: React.FC = () => {
             Whether you have a complex problem to solve or an innovative idea to bring to life, let's connect!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="flex items-center gap-2">
+            <Button onClick={handleStartConversation} size="lg" className="flex items-center gap-2">
               <Mail size={18} />
               Start a Conversation
             </Button>
-            <Button variant="outline" size="lg" className="flex items-center gap-2">
+            <Button onClick={handleViewWork} variant="outline" size="lg" className="flex items-center gap-2">
               <ExternalLink size={18} />
               View My Work
             </Button>
