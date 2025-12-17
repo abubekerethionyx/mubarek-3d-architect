@@ -12,7 +12,7 @@ const RotatingCube: React.FC = () => {
       meshRef.current.rotation.x = state.clock.elapsedTime * 0.3;
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.5;
       meshRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
-      
+
       // Add floating motion
       meshRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.5;
     }
@@ -21,10 +21,10 @@ const RotatingCube: React.FC = () => {
   return (
     <mesh ref={meshRef} position={[0, 0, 0]}>
       <boxGeometry args={[2.5, 2.5, 2.5]} />
-      <meshStandardMaterial 
-        color="#ff69b4" 
-        transparent 
-        opacity={0.9} 
+      <meshStandardMaterial
+        color="#ff69b4"
+        transparent
+        opacity={0.9}
         wireframe
         emissive="#ff69b4"
         emissiveIntensity={0.2}
@@ -47,7 +47,7 @@ const FloatingParticles: React.FC = () => {
   for (let i = 0; i < 50; i++) {
     const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b', '#ef4444'];
     const color = colors[i % colors.length];
-    
+
     particles.push(
       <mesh
         key={i}
@@ -58,8 +58,8 @@ const FloatingParticles: React.FC = () => {
         ]}
       >
         <sphereGeometry args={[0.05 + Math.random() * 0.1, 8, 8]} />
-        <meshStandardMaterial 
-          color={color} 
+        <meshStandardMaterial
+          color={color}
           emissive={color}
           emissiveIntensity={0.3}
         />
@@ -82,7 +82,7 @@ const HeroSection: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20 animate-pulse-slow"></div>
-      
+
       {/* Three.js Canvas */}
       <div className="absolute inset-0 w-full h-full">
         <Canvas
@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
           <RotatingCube />
         </Canvas>
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <div className="animate-fade-in">
@@ -110,21 +110,20 @@ const HeroSection: React.FC = () => {
               Mubarek
             </span>
           </h1>
-          
+
           <div className="mb-6 space-y-2">
             <p className="text-3xl md:text-4xl text-gray-200 font-light tracking-wide">
-              Full-Stack Developer
+              Senior Software Developer
             </p>
             <p className="text-2xl md:text-3xl bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-              & AI Agent Specialist
+              & Full Stack Expert
             </p>
           </div>
-          
+
           <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Crafting intelligent solutions with 5+ years of expertise in React, Python, Java, 
-            and cutting-edge AI Agent development using AutoGen
+            Results-driven Senior Software Developer with strong experience in designing, developing, and maintaining scalable software applications.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
               onClick={scrollToAbout}
@@ -133,7 +132,7 @@ const HeroSection: React.FC = () => {
               <span className="mr-2">Explore My Work</span>
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Button>
-            
+
             <Button
               variant="outline"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -143,7 +142,7 @@ const HeroSection: React.FC = () => {
               <span className="transition-transform group-hover:translate-x-1">✉</span>
             </Button>
           </div>
-          
+
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">

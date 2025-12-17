@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
@@ -46,7 +46,7 @@ const ContactSection: React.FC = () => {
         <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Get In Touch
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="bg-slate-800/50 border-slate-700 p-8">
@@ -84,7 +84,7 @@ const ContactSection: React.FC = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
                   Subject
@@ -100,7 +100,7 @@ const ContactSection: React.FC = () => {
                   placeholder="What's this about?"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                   Message
@@ -116,7 +116,7 @@ const ContactSection: React.FC = () => {
                   placeholder="Tell me about your project or how I can help..."
                 />
               </div>
-              
+
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -132,11 +132,11 @@ const ContactSection: React.FC = () => {
             <Card className="bg-slate-800/50 border-slate-700 p-6">
               <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
               <p className="text-gray-300 mb-6">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you want to discuss a potential collaboration or just say hello, 
+                I'm always interested in new opportunities and exciting projects.
+                Whether you want to discuss a potential collaboration or just say hello,
                 I'd love to hear from you!
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center">
@@ -144,10 +144,10 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Email</p>
-                    <p className="text-gray-400">abubeker.mubarek@example.com</p>
+                    <p className="text-gray-400">abubekermubark7545@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-purple-600/20 rounded-full flex items-center justify-center">
                     <Github className="w-6 h-6 text-purple-400" />
@@ -157,7 +157,7 @@ const ContactSection: React.FC = () => {
                     <p className="text-gray-400">github.com/abubekermubarek</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center">
                     <Linkedin className="w-6 h-6 text-blue-400" />
@@ -177,7 +177,7 @@ const ContactSection: React.FC = () => {
                 <span className="text-green-400 font-medium">Available for new projects</span>
               </div>
               <p className="text-gray-300 text-sm">
-                I'm currently open to freelance opportunities and full-time positions. 
+                I'm currently open to freelance opportunities and full-time positions.
                 Let's discuss how we can work together!
               </p>
             </Card>

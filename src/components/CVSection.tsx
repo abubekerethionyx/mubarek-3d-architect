@@ -9,47 +9,43 @@ const CVSection: React.FC = () => {
 
   const cvContent = `
 ABUBEKER MUBAREK
-Full-Stack Developer & AI Agent Specialist
+Senior Software Developer
 
 CONTACT INFORMATION
-Email: contact@abubekermubarek.com
-Phone: +1 (555) 123-4567
-Location: Remote/Available Worldwide
+Email: abubekermubark7545@gmail.com
+Location: Ethiopia
 
 PROFESSIONAL SUMMARY
-Experienced Full-Stack Developer with 5+ years of expertise in React, Python, Java, and cutting-edge AI Agent development using AutoGen. Passionate about crafting intelligent solutions and building scalable web applications.
+Results-driven Senior Software Developer with strong experience in designing, developing, and maintaining scalable software applications. Graduated in Electrical and Computer Engineering and possesses hands-on expertise in full-stack development, API integration, database management, and collaborative agile environments.
 
 TECHNICAL SKILLS
-• Frontend: React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS
-• Backend: Python, Java, Node.js, REST APIs
-• AI/ML: AutoGen, Machine Learning, AI Agent Development
-• Databases: PostgreSQL, MongoDB, MySQL
-• Tools: Git, Docker, AWS, Vercel
+• Frontend: React, React Router, Responsive UI Design
+• Backend: Python (Flask), REST APIs
+• Databases: PostgreSQL, SQLAlchemy
+• Authentication: Google OAuth, Firebase
+• Tools: Git, Version Control, Debugging, Deployment, API Integration
 
-EXPERIENCE
-Senior Full-Stack Developer (2019 - Present)
-• Developed and maintained multiple web applications using React and Python
-• Implemented AI-powered features using AutoGen framework
-• Led team of 3 developers on various client projects
-• Improved application performance by 40% through optimization
-
-AI Agent Developer (2021 - Present)
-• Specialized in AutoGen framework for intelligent agent systems
-• Built conversational AI applications for enterprise clients
-• Integrated AI agents with existing business workflows
+PROFESSIONAL EXPERIENCE
+Senior Software Developer
+FINETO – Software and IoT Products | August 2021 – October 2025
+• Designed, developed, and maintained software applications to meet business and technical requirements.
+• Collaborated closely with cross-functional development teams to implement new features and enhance existing systems.
+• Wrote clean, efficient, and maintainable code following industry standards and best practices.
+• Integrated RESTful APIs and managed backend services to ensure seamless data communication.
+• Worked with databases to support application requirements, optimize queries, and maintain data integrity.
+• Participated in technical discussions and code reviews.
+• Assisted in troubleshooting, debugging, and resolving complex technical issues.
 
 EDUCATION
-Bachelor of Science in Computer Science
-University of Technology (2015-2019)
-
-PROJECTS
-• Portfolio Website - React, Three.js, TypeScript
-• AI Chat Application - AutoGen, Python, React
-• E-commerce Platform - Full-stack development
+Bachelor of Science in Electrical and Computer Engineering
+Dire Dawa University – Dire Dawa, Ethiopia
+Graduated: 2021
 
 LANGUAGES
-• English (Fluent)
-• Additional languages as applicable
+English – Professional Working Proficiency
+
+CERTIFICATION / EXPERIENCE LETTER
+Experience certified by FINETO Software and IoT Product, confirming employment as a Senior Software Developer from August 2021 to October 2025.
 `;
 
   const handleDownloadCV = () => {
@@ -98,7 +94,7 @@ LANGUAGES
                   <FileDown className="mr-2" size={20} />
                   Download CV
                 </Button>
-                
+
                 <Button
                   onClick={togglePreview}
                   variant="outline"
@@ -160,8 +156,8 @@ LANGUAGES
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-2">PROFESSIONAL SUMMARY</h4>
                       <p className="leading-relaxed">
-                        Experienced Full-Stack Developer with 5+ years of expertise in React, Python, Java, 
-                        and cutting-edge AI Agent development using AutoGen. Passionate about crafting 
+                        Experienced Full-Stack Developer with 5+ years of expertise in React, Python, Java,
+                        and cutting-edge AI Agent development using AutoGen. Passionate about crafting
                         intelligent solutions and building scalable web applications.
                       </p>
                     </div>

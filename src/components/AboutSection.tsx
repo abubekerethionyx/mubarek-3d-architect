@@ -7,41 +7,47 @@ import { Calendar, Code, Users, Award, MapPin, Mail, Download, ExternalLink } fr
 
 const AboutSection: React.FC = () => {
   const stats = [
-    { icon: Code, label: 'Years Experience', value: '5+', color: 'text-blue-500' },
-    { icon: Users, label: 'Projects Completed', value: '50+', color: 'text-green-500' },
-    { icon: Award, label: 'Certifications', value: '8', color: 'text-purple-500' },
+    { icon: Code, label: 'Years Experience', value: '4+', color: 'text-blue-500' },
+    { icon: Users, label: 'Projects Completed', value: '20+', color: 'text-green-500' },
+    { icon: Award, label: 'Certifications', value: '1', color: 'text-purple-500' },
     { icon: Calendar, label: 'Lines of Code', value: '100K+', color: 'text-orange-500' }
   ];
 
   const skills = [
-    { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'] },
-    { category: 'Backend', items: ['Python', 'Java', 'Spring Boot', 'FastAPI'] },
-    { category: 'AI/ML', items: ['AutoGen', 'OpenAI GPT', 'TensorFlow', 'Scikit-learn'] },
-    { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'] }
+    { category: 'Frontend', items: ['React', 'React Router', 'Responsive UI Design'] },
+    { category: 'Backend', items: ['Python', 'Flask', 'REST APIs', 'SQLAlchemy'] },
+    { category: 'Database', items: ['PostgreSQL', 'Firebase'] },
+    { category: 'Tools', items: ['Git', 'Version Control', 'Debugging', 'Deployment'] },
+    { category: 'Soft Skills', items: ['Problem Solving', 'Team Collaboration', 'Adaptability', 'Time Management'] },
+    { category: 'Languages', items: ['English (Professional)'] }
   ];
 
   const handleDownloadCV = () => {
     // Create and download CV file
-    const cvContent = `John Doe - Full-Stack Developer & AI Specialist
-
-EXPERIENCE:
-• 2019-Present: Full-Stack Developer at Fineto
-• 2023-Present: AI Agent Development Specialist
-• 2018-2019: Junior Developer & Learning Phase
-
-SKILLS:
-Frontend: React, TypeScript, Next.js, Tailwind CSS
-Backend: Python, Java, Spring Boot, FastAPI
-AI/ML: AutoGen, OpenAI GPT, TensorFlow, Scikit-learn
-Database: PostgreSQL, MongoDB, Redis, MySQL
-
-ACHIEVEMENTS:
-• 5+ years of development experience
-• 50+ completed projects
-• 8 professional certifications
-• 100K+ lines of code written
-
-Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
+    const cvContent = `Abubeker Mubarek - Senior Software Developer
+ 
+ EXPERIENCE:
+ • August 2021 – October 2025: Senior Software Developer at FINETO - Software and IoT Products
+ 
+ SKILLS:
+ Programming & Development: Full-Stack Web Development, Software Architecture
+ Frontend: React, React Router, Responsive UI Design
+ Backend: Python (Flask), REST APIs
+ Databases: PostgreSQL, SQLAlchemy
+ Authentication & Services: Google OAuth, Firebase
+ Tools & Practices: Git, Version Control, Debugging, Deployment, API Integration
+ 
+ ACHIEVEMENTS:
+ • Designed, developed, and maintained software applications to meet business and technical requirements.
+ • Collaborated closely with cross-functional development teams to implement new features.
+ • Wrote clean, efficient, and maintainable code following industry standards.
+ 
+ EDUCATION:
+ Bachelor of Science in Electrical and Computer Engineering
+ Dire Dawa University – Dire Dawa, Ethiopia
+ Graduated: 2021
+ 
+ Contact: abubekermubark7545@gmail.com | Location: Ethiopia`;
 
     const blob = new Blob([cvContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
@@ -64,7 +70,7 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
 
   const handleStartConversation = () => {
     // Open email client
-    window.open('mailto:john.doe@email.com?subject=Let\'s Build Something Amazing Together&body=Hi John,%0D%0A%0D%0AI\'d love to discuss a potential project collaboration...', '_blank');
+    window.open('mailto:abubekermubark7545@gmail.com?subject=Let\'s Build Something Amazing Together&body=Hi Abubeker,%0D%0A%0D%0AI\'d love to discuss a potential project collaboration...', '_blank');
   };
 
   const handleViewWork = () => {
@@ -86,11 +92,11 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
             Passionate developer crafting intelligent solutions at the intersection of technology and innovation
           </p>
         </div>
-        
+
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 animate-fade-in">
           {stats.map((stat, index) => (
-            <Card 
+            <Card
               key={stat.label}
               className="bg-card/50 backdrop-blur-sm border-border p-6 text-center hover:bg-card/70 transition-all duration-300 hover:scale-105"
               style={{ animationDelay: `${index * 100}ms` }}
@@ -113,30 +119,28 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
                 <h3 className="text-2xl font-bold text-foreground">Full-Stack Developer</h3>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <MapPin size={16} />
-                  <span>Remote • Worldwide</span>
+                  <span>Ethiopia</span>
                 </div>
               </div>
             </div>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate full-stack developer with over 5 years of experience building 
-              scalable web applications and intelligent AI systems. My journey in software 
-              development has been driven by curiosity and a desire to solve complex problems 
-              through elegant, efficient code.
+              I'm a Results-driven Senior Software Developer with strong experience in designing,
+              developing, and maintaining scalable software applications. Graduated in Electrical
+              and Computer Engineering and possesses hands-on expertise in full-stack development,
+              API integration, database management, and collaborative agile environments.
             </p>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Fineto, I've spent 4 years developing robust financial applications, 
-              mastering technologies like React, Python, Java, and Spring Boot. Recently, 
-              I've been exploring the fascinating world of AI agent development using 
-              Microsoft's AutoGen framework, creating intelligent systems that can collaborate 
-              and solve complex business problems.
+              At FINETO, I've spent 4 years designing, developing, and maintaining software applications,
+              meeting business and technical requirements. I have collaborated closely with cross-functional
+              development teams to implement new features and enhance existing systems, while writing
+              clean, efficient, and maintainable code following industry standards.
             </p>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing 
-              to open-source projects, mentoring junior developers, or sharing knowledge 
-              with the developer community through technical blogs and workshops.
+              I am passionate about problem-solving, system optimization, and continuous learning,
+              with a proven ability to contribute effectively to team-driven projects.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
@@ -150,7 +154,7 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
               </Button>
             </div>
           </div>
-          
+
           {/* Experience & Skills */}
           <div className="space-y-6 animate-fade-in">
             {/* Experience Timeline */}
@@ -162,22 +166,22 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
               <div className="space-y-6">
                 <div className="relative">
                   <div className="absolute left-2 top-8 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-                  
+
                   <div className="flex items-start space-x-4 relative">
                     <div className="w-5 h-5 bg-blue-500 rounded-full border-2 border-background z-10"></div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <p className="text-foreground font-semibold">2019 - Present</p>
-                        <Badge variant="secondary">5 years</Badge>
+                        <p className="text-foreground font-semibold">2021 - 2025</p>
+                        <Badge variant="secondary">4 years</Badge>
                       </div>
-                      <p className="text-primary font-medium">Full-Stack Developer at Fineto</p>
+                      <p className="text-primary font-medium">Senior Software Developer at FINETO</p>
                       <p className="text-muted-foreground text-sm mt-1">
-                        Leading development of fintech applications, managing teams, and implementing scalable solutions
+                        Designing, developing, and maintaining scalable software applications
                       </p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4 relative">
                   <div className="w-5 h-5 bg-purple-500 rounded-full border-2 border-background z-10"></div>
                   <div className="flex-1">
@@ -191,17 +195,17 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4 relative">
                   <div className="w-5 h-5 bg-green-500 rounded-full border-2 border-background z-10"></div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
-                      <p className="text-foreground font-semibold">2018 - 2019</p>
-                      <Badge variant="secondary">1 year</Badge>
+                      <p className="text-foreground font-semibold">2021</p>
+                      <Badge variant="secondary">Graduated</Badge>
                     </div>
-                    <p className="text-primary font-medium">Junior Developer & Learning Phase</p>
+                    <p className="text-primary font-medium">B.Sc. in Electrical and Computer Engineering</p>
                     <p className="text-muted-foreground text-sm mt-1">
-                      Foundation building and rapid skill development
+                      Dire Dawa University
                     </p>
                   </div>
                 </div>
@@ -222,8 +226,8 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {skillGroup.items.map((skill) => (
-                        <Badge 
-                          key={skill} 
+                        <Badge
+                          key={skill}
                           variant="secondary"
                           className="hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
                         >
@@ -244,7 +248,7 @@ Contact: john.doe@email.com | LinkedIn: /in/johndoe`;
             Let's Build Something Amazing Together
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            I'm always excited to work on challenging projects and collaborate with passionate teams. 
+            I'm always excited to work on challenging projects and collaborate with passionate teams.
             Whether you have a complex problem to solve or an innovative idea to bring to life, let's connect!
           </p>
           <div className="flex flex-wrap justify-center gap-4">

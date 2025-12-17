@@ -53,9 +53,9 @@ const SkillsSection: React.FC = () => {
   const skills = [
     { name: 'React', position: [-3, 2, 0] as [number, number, number], color: '#61dafb' },
     { name: 'Python', position: [3, 2, 0] as [number, number, number], color: '#3776ab' },
-    { name: 'Java', position: [-3, -2, 0] as [number, number, number], color: '#ed8b00' },
-    { name: 'Spring Boot', position: [3, -2, 0] as [number, number, number], color: '#6db33f' },
-    { name: 'AutoGen AI', position: [0, 0, 2] as [number, number, number], color: '#ff6b35' },
+    { name: 'Flask', position: [-3, -2, 0] as [number, number, number], color: '#ed8b00' },
+    { name: 'PostgreSQL', position: [3, -2, 0] as [number, number, number], color: '#6db33f' },
+    { name: 'Git', position: [0, 0, 2] as [number, number, number], color: '#ff6b35' },
   ];
 
   return (
@@ -64,7 +64,7 @@ const SkillsSection: React.FC = () => {
         <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Skills & Technologies
         </h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="h-96">
             <Canvas
@@ -74,7 +74,7 @@ const SkillsSection: React.FC = () => {
               <ambientLight intensity={0.6} />
               <pointLight position={[10, 10, 10]} intensity={1} />
               <pointLight position={[-10, -10, -10]} intensity={0.5} color="purple" />
-              
+
               {skills.map((skill) => (
                 <SkillSphere
                   key={skill.name}
@@ -87,49 +87,49 @@ const SkillsSection: React.FC = () => {
               ))}
             </Canvas>
           </div>
-          
+
           <div className="space-y-6">
             <Card className="bg-slate-800/50 border-slate-700 p-6">
               <h3 className="text-2xl font-bold text-blue-400 mb-4">Frontend Development</h3>
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">React.js</span>
+                  <span className="text-gray-300">React & React Router</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-blue-500 h-2 rounded-full w-11/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">TypeScript</span>
+                  <span className="text-gray-300">Responsive UI Design</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-blue-500 h-2 rounded-full w-10/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Tailwind CSS</span>
+                  <span className="text-gray-300">Google OAuth & Firebase</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-blue-500 h-2 rounded-full w-11/12"></div>
                   </div>
                 </div>
               </div>
             </Card>
-            
+
             <Card className="bg-slate-800/50 border-slate-700 p-6">
-              <h3 className="text-2xl font-bold text-purple-400 mb-4">Backend & AI</h3>
+              <h3 className="text-2xl font-bold text-purple-400 mb-4">Backend & Database</h3>
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Python</span>
+                  <span className="text-gray-300">Python (Flask) & REST APIs</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-purple-500 h-2 rounded-full w-11/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Java Spring Boot</span>
+                  <span className="text-gray-300">PostgreSQL & SQLAlchemy</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-purple-500 h-2 rounded-full w-10/12"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">AutoGen AI</span>
+                  <span className="text-gray-300">Git & Version Control</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-purple-500 h-2 rounded-full w-9/12"></div>
                   </div>
