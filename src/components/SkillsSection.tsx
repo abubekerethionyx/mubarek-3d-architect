@@ -72,6 +72,7 @@ const SkillsSection: React.FC = () => {
         { name: 'Responsive UI Design', level: 85, description: 'Mobile-first, accessible interfaces' },
         { name: 'TypeScript', level: 80, description: 'Type-safe JavaScript development' },
         { name: 'Tailwind CSS', level: 85, description: 'Utility-first styling' },
+        { name: 'Next.js', level: 85, description: 'Server-side rendering and static generation' },
       ]
     },
     {
@@ -84,6 +85,8 @@ const SkillsSection: React.FC = () => {
         { name: 'REST APIs', level: 88, description: 'API design and integration' },
         { name: 'SQLAlchemy ORM', level: 82, description: 'Database abstraction layer' },
         { name: 'Authentication', level: 85, description: 'Google OAuth, Firebase Auth' },
+        { name: 'Java Springboot', level: 85, description: 'RESTful API development' },
+        { name: 'C# .NET', level: 85, description: 'RESTful API development' },
       ]
     },
     {
@@ -96,6 +99,18 @@ const SkillsSection: React.FC = () => {
         { name: 'Firebase', level: 80, description: 'Real-time NoSQL database' },
         { name: 'Git & Version Control', level: 90, description: 'Collaborative development' },
         { name: 'Deployment', level: 82, description: 'CI/CD and cloud hosting' },
+      ]
+    },
+    {
+      title: 'DevOps',
+      icon: '🛠️',
+      color: 'from-green-500 to-emerald-500',
+      borderColor: 'border-green-500/30',
+      skills: [
+        { name: 'Docker', level: 85, description: 'Containerization and orchestration' },
+        { name: 'Kubernetes', level: 80, description: 'Container orchestration' },
+        { name: 'CI/CD', level: 90, description: 'Continuous integration and delivery' },
+        { name: 'Jenkins', level: 85, description: 'CI/CD pipeline automation' },
       ]
     },
     {
