@@ -23,19 +23,25 @@ const ContactSection: React.FC = () => {
       ...prev,
       [name]: value
     }));
-  };
-  const handleSubmit = async (e: React.FormEvent) => {
+  }; const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/abubekermubark7545@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/abubekermubark7545@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email, // Optional: auto-reply to sender
+          _subject: `New Contact: ${formData.subject}`,
+        })
       });
 
       if (response.ok) {
@@ -44,26 +50,19 @@ const ContactSection: React.FC = () => {
           description: "Thank you for reaching out. I'll get back to you soon.",
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
-        setIsSubmitting(false);
       } else {
-        toast({
-          title: "Message failed to send!",
-          description: "Please try again later.",
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
+        throw new Error('Submission failed');
       }
     } catch (error) {
-      console.error('Error sending message:', error);
       toast({
         title: "Message failed to send!",
         description: "Please try again later.",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className="container mx-auto px-6">
       <div className="max-w-4xl mx-auto">
