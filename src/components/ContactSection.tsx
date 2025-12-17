@@ -24,20 +24,44 @@ const ContactSection: React.FC = () => {
       [name]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+    try {
+      const response = await fetch('https://formspree.io/f/abubekermubark7545@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitting(false);
+      } else {
+        toast({
+          title: "Message failed to send!",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Message failed to send!",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -154,7 +178,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">GitHub</p>
-                    <p className="text-gray-400">github.com/abubekermubarek</p>
+                    <p className="text-gray-400">github.com/abubekerethionyx</p>
                   </div>
                 </div>
 
@@ -164,7 +188,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">LinkedIn</p>
-                    <p className="text-gray-400">linkedin.com/in/abubekermubarek</p>
+                    <p className="text-gray-400">https://www.linkedin.com/in/abubeker-mubarek-781723245/</p>
                   </div>
                 </div>
               </div>
